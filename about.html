@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — TRUE GOSPEL ASSEMBLY VEMAGIRI</title>
+  <!-- Favicon -->
+  <link href="main logo.png" rel="icon">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-hero {
+      background: linear-gradient(rgba(4, 95, 145, 0.8), rgba(6, 72, 107, 0.8)),
+                  url('qotd.jpg') center/cover no-repeat;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .about-section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 24px 28px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      line-height: 1.7;
+    }
+
+    .about-section h2 {
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .about-section p {
+      margin-bottom: 16px;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .about-footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width:768px) {
+      .about-hero {
+        height: 180px;
+        font-size: 24px;
+        padding: 0 20px;
+      }
+      .about-section {
+        margin: 24px 16px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+  <img src="main logo.png" alt="TGA Logo" class="brand-logo" />
+  <span class="brand-text">TRUE GOSPEL ASSEMBLY VEMAGIRI</span>
+</div>
+      <div class="menu">
+        <div class="menu">
+          <button class="menu-btn">☰ MENU</button>
+            <div class="dropdown">
+              <a href="index.html">🏠 Home</a>
+              <a href="https://tgavmg.vercel.app/">📖 TGAVMG Website</a>
+              <a href="https://tgavmg.vercel.app/livestream.html">🔴 Sunday Live</a>
+              <a href="about.html">ℹ️ About</a>
+          <button id="adminBtn" class="btn primary">🔒 Admin Panel</button>
+            </div>
+        </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+</script>
+      </div>  
+    </div>
+  </header>
+
+  <section class="about-hero">
+    About Our Ministry
+  </section>
+
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      <strong>True Gospel Assembly Vemagiri</strong> (TGAVMG) is a Bible-based church
+      dedicated to spreading the Word of God and nurturing spiritual growth
+      through worship, fellowship, and service. We believe in the full Gospel message
+      and seek to live out Christ’s teachings in our daily lives.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      To proclaim the good news of Jesus Christ, strengthen believers in faith,
+      and reach the world with love, humility, and truth.
+    </p>
+
+    <h2>Our Vision</h2>
+    <p>
+      We envision a Spirit-led community of believers walking in unity, holiness,
+      and the power of the Holy Ghost, preparing for the coming of the Lord.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+      📍 Vemagiri, Rajahmundry, Andhra Pradesh, India<br />
+      📧 Email: <a href="mailto:tgavmg321@gmail.com">contact@tgavmg.com</a><br />
+      🌐 Website: <a href="https://tgavmg.vercel.app/"> True gospel assembly vemagiri</a>
+    </p>
+  </section>
+
+  <footer class="about-footer" style="background-color: #bebebe; color: black;">
+    ©2025 TRUE GOSPEL ASSEMBLY VEMAGIRI — All Rights Reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,447 @@
+:root {
+  --blue: #4b0505;
+  --accent: #064d52;
+  --muted: #9aa7af;
+  --bg: #fafafa;
+  --card: #ffffff; 
+  --max-w: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #333;
+}
+
+/* Dropdown Menu */
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+
+.brand-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: inline-block;
+}
+
+.menu-btn {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.menu-btn:hover {
+  background: var(--accent);
+  transform: scale(1.02);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: var(--card);
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown a {
+  color: #333;
+  padding: 10px 14px;
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.dropdown a:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+/* Desktop: Show dropdown on hover */
+@media (min-width: 769px) {
+  .menu:hover .dropdown {
+    display: block;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu {
+    position: relative;
+    width: 100%;
+  }
+
+  .brand-text::before {
+    content: "TGAVMG";
+    margin-top: 2rem;
+  }
+
+  .brand-text {
+    font-size: 20px;
+    visibility: hidden;
+    position: relative;
+  }
+
+  .brand-text::before {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .menu-btn {
+    text-align: center;
+    padding-left: 20px;
+    font-size: 18px;
+    color:#ffffff;
+    background:#064d52;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    display: none;
+    background: var(--card);
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 6px;
+  }
+
+  .menu.show .dropdown {
+    display: block;
+  }
+
+  .dropdown a {
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown a:last-child {
+    border-bottom: none;
+  }
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.topbar {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 4rem;
+}
+
+.brand { font-weight: 700; letter-spacing: 1px; }
+.menu { opacity: 0.95; }
+
+.hero {
+  height: 860px;
+  width:100%; 
+  background-image: url('qotd.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  padding: 28px 0;
+}
+
+.content { padding-right: 8px; }
+
+.song-title {
+  font-size: 40px;
+  margin: 8px 0 6px;
+  text-align: left;
+  color: #750404;
+}
+
+.song-ref {
+  color: var(--accent);
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.lyrics {
+  line-height: 1.8;
+  color: #333;
+  font-size: 24px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  padding: 0;
+  border-radius: 2px;
+}
+
+.daily {
+  background: var(--accent);
+  color:#ffe600;
+  padding: 28px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.daily h2 {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 30px;
+  box-shadow: #2b9ad6;
+  margin: 0 0 8px;
+}
+
+.daily p { opacity: 0.95; text-align: center; font-size: 20px; color:#f1f1f1 }
+.daily-ref {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.calendar-card {
+  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.nav {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-grid .day {
+  padding: 8px;
+  text-align: center;
+  background: #e9ecef;
+  border-radius: 2px;
+}
+
+.calendar-grid .day.today {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.btn {
+  background: var(--blue);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  width: 80%;
+  transition: background 0.25s ease, transform 0.1s ease-in-out;
+  margin-left: 1rem;
+}
+
+.btn:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: #888;
+  color: #fff;
+}
+
+/* ====== MODAL (PRO STYLING) ====== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-panel {
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 480px;
+  animation: slideUp 0.35s ease forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-panel h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 0.6px;
+}
+
+.modal-panel label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.modal-panel input,
+.modal-panel textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #d4d9dd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.modal-panel input:focus,
+.modal-panel textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(89, 168, 217, 0.2);
+}
+
+.actions-row,
+.auth-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.auth-actions button,
+.actions-row button {
+  min-width: 90px;
+}
+
+#authSection p {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+  .hero { height: 180px; }
+}
+
+@media (max-width: 600px) {
+  .modal-panel {
+    padding: 20px;
+    width: 100%;
+  }
+}

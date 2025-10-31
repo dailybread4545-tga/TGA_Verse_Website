@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TGA — Daily Bread / Quote</title>
+  <!-- Favicon -->
+  <link href="main logo.png" rel="icon">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+  <img src="main logo.png" alt="TGA Logo" class="brand-logo" />
+  <span class="brand-text">TRUE GOSPEL ASSEMBLY VEMAGIRI</span>
+</div>
+      <div class="menu">
+        <div class="menu">
+          <button class="menu-btn">☰ MENU</button>
+            <div class="dropdown">
+              <a href="index.html">🏠 Home</a>
+              <a href="https://tgavmg.vercel.app/">📖 TGAVMG Website</a>
+              <a href="https://tgavmg.vercel.app/livestream.html">🔴 Sunday Live</a>
+              <a href="about.html">ℹ️ About</a>
+          <button id="adminBtn" class="btn primary">🔒 Admin Panel</button>
+            </div>
+        </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+</script>
+      </div>  
+    </div>
+  </header>
+
+  <main>
+    <div class="hero"></div>
+    <div class="admin-row" style="margin-top: 1rem; margin-right: 1rem;"  >
+      <button class="btn primary"><a href="https://tgavmg.vercel.app/" style="color: aliceblue;">కుటుంభ బలిపీఠము</a></button>
+      <button class="btn primary"><a href="https://tgavmg.vercel.app/" style="color: aliceblue;">ఎఫెసీయులకు</a></button>
+      <button class="btn primary"><a href="https://tgavmg.vercel.app/" style="color: aliceblue;">ఆదివారం ఆరాధన</a></button>
+    </div>
+
+    <div class="container layout">
+      <section class="content">
+        <h1 id="songTitle" class="song-title" style="font-family: Ramabhadra">The Mark Of The Beast</h1>
+        <div id="songRef" class="song-ref" style="font-family: Ramabhadra">56-0715</div>
+
+        <article id="lyrics" class="lyrics" style="font-family: Ramabhadra;">
+          Loading content...
+        </article>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card daily">
+          <h2 style="font-family: Merienda;">Daily Bread</h2>
+          <p id="dailyBread" style="font-family: Ramabhadra;">...but the water that I shall give him shall be in him a well of water springing up into everlasting life.</p>
+          <div class="daily-ref" id="dailyRef" style="font-family: Sree Krushnadevaraya;">John 4:14</div>
+        </div>
+
+        <div class="card calendar-card">
+          <div class="cal-head">
+            <button id="prev" class="nav">◀</button>
+            <div id="calMonth" class="month">OCTOBER 2025</div>
+            <button id="next" class="nav">▶</button>
+          </div>
+
+          <div class="weekday-row">
+            <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+          </div>
+
+          <div id="calendar" class="calendar-grid"></div>
+        </div>
+
+        <div class="admin-row">
+          <button class="btn primary"><a href="https://tgavmg.vercel.app/" style="color: aliceblue;">TGA Website</a></button> 
+          <div class="built">Built By TGAVMG</div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer container"  style="background-color: #bebebe; color: black;">©2025 TRUE GOSPEL ASSEMBLY VEMAGIRI — All Rights Reserved.</footer>
+
+  <!-- Admin Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <div class="admin-logo">
+      <img src="main logo.png" alt="TGA Logo" style="height:60px; width:60px;"/>
+      <h3>Admin Panel</h3>
+      </div>
+      <div id="authSection" class="auth">
+        <label>Email</label>
+        <input id="adminEmail" type="email" placeholder="admin@example.com" />
+        <label>Password</label>
+        <input id="adminPass" type="password" placeholder="Enter password" />
+        <div class="auth-actions">
+          <button id="loginSubmit" class="btn primary">Login</button>
+          <button id="closeModal" class="btn secondary">Close</button>
+        </div>
+        <p style="font-size:13px;color:#666;margin-top:8px">
+          Tip: create the admin account By TGA Admin (Owner:Bannu)
+        </p>
+      </div>
+
+      <div id="editor" style="display:none">
+        <label>Song Title</label>
+        <input id="editTitle" type="text" />
+
+        <label>Reference</label>
+        <input id="editRef" type="text" />
+
+        <label>Lyrics / Verse</label>
+        <textarea id="editLyrics" rows="6"></textarea>
+
+        <label>Daily Bread Text</label>
+        <textarea id="editDaily" rows="3"></textarea>
+
+        <label>Daily Bread Reference</label>
+        <input id="editDailyRef" type="text" />
+
+        <div class="actions-row">
+          <button id="saveBtn" class="btn primary">Save</button>
+          <button id="logoutBtn" class="btn secondary">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
